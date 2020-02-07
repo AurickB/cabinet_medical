@@ -1,0 +1,25 @@
+{{ form_start(form) }}
+        {#Pour modifier le théme du formulaire se rendre dans config/packages/twig.yaml et rajouter form_themes[]
+        Les différents thèmes se trouvent dans vendor/symfony/twig-bridge/Ressources/views/Form#}
+<div class="row">
+    <div class="col-md-12">{{ form_row(form.title) }}</div>
+</div>
+<div class="row">
+    <div class="col-md-12">{{ form_row(form.content) }}</div>
+</div>
+<div class="'row">
+    <div class="col-md-4">{{ form_row(form.pictureFiles) }}</div>
+    <div class="col-md-8">
+        <div class="row flex justify-content-start flex-wrap">
+            {% for picture in articles.pictures %}
+                <div class="col-4">
+                    <img id="imageEdit" src="{{ vich_uploader_asset(picture, 'imageFile')}}" alt="card-img-top">
+                    <a href="#" class="btn btn-danger" data-delete data-token="{{ csrf_token('delete' ~ articles.id) }}">Supprimer</a>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+{{ form_rest(form) }}
+<button class="btn btn-primary">{{ button|default('Enregistrer') }}</button>
+{{ form_end(form) }}

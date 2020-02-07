@@ -1,0 +1,16 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Actualités{% endblock %}
+
+{% block body %}
+    <div class="container mt-4">
+        <h1>Actualités</h1>
+        <div class="content-wrapper">
+            {% for object in articles %}
+                <div class="">
+                    {% include 'articles/_articles.html.twig' %}
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+{% endblock %}

@@ -103,12 +103,12 @@ class DOMAnimation  {
                  * On réduit tout les éléments accordéon.
                  */
                 for (i = 0; i < accItem.length; i++) {
-                    accItem[i].className = 'accordionItem close';
+                    accItem[i].className = 'accordion-item closed';
                     console.log("close")
                 }
                 // Si au click le noeud parent à pour class "close" alors il récupère la class "open".
-                if (itemClass == 'accordionItem close') {
-                    this.parentNode.className = 'accordionItem open';
+                if (itemClass == 'accordion-item closed') {
+                    this.parentNode.className = 'accordion-item open';
                     console.log("open")
                 }
             });
@@ -126,16 +126,10 @@ class DOMAnimation  {
     }
 
     static scrollTo(){
-        // Au clic sur un lien possédant la class "js-scrollTo".
         $('.js-scrollTo').on('click', function () {
             if (location.hostname == this.hostname
                 && this.pathname.replace(/^\//, "") == location.pathname.replace(/^\//, "")){
-                // Enregistrement de l'attribut href dans la variable target.
-                let target = $(this).attr('href');
-                /**
-                 * On arrete les animation en cours.
-                 * On déclenche l'animation vers notre ancre target.
-                 */
+                let target = getHashFromUrl(this);
                 $('html, body').stop().animate({ scrollTop: $(target).offset().top }, 'slow');
                 return false;
             }
@@ -143,10 +137,13 @@ class DOMAnimation  {
     }
 }
 
+function getHashFromUrl(url){
+    return $("<a />").attr("href", url)[0].hash;
+}
 
 function init(){
     DOMAnimation.navToggle();
-    DOMAnimation.displayScrollMenu(document.getElementsByClassName("accordionItemHeading"), document.getElementsByClassName('accordionItem'));
+    DOMAnimation.displayScrollMenu(document.getElementsByClassName("accordion-item-heading"), document.getElementsByClassName('accordion-item'));
     DOMAnimation.scrollTo();
 }
 
@@ -154,3 +151,4 @@ window.onload = init();
 
 
 console.log('Hello Webpack Encore! Edit me in assets/js/app.js');
+console.log(window.location);

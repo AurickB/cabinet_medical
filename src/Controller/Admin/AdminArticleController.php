@@ -43,6 +43,7 @@ class AdminArticleController extends AbstractController
      * @Route("/admin/article/create", name="admin.article.new")
      * @param Request $request
      * @return Response
+     * @throws \Exception
      */
     public function new(Request $request)
     {
@@ -50,7 +51,6 @@ class AdminArticleController extends AbstractController
         $form = $this->createForm(ArticleType::class, $article);
         $form->handleRequest($request);
         $user = $this->getUser();
-        dump($user);
         if ($form->isSubmitted() && $form->isValid()){
             $article->setUser($user);
             $this->em->persist($article);

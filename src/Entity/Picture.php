@@ -31,7 +31,6 @@ class Picture
     private $filename;
 
     /**
-     * @var File|null
      * @ORM\ManyToOne(targetEntity="App\Entity\Article", inversedBy="pictures")
      */
     private $article;
@@ -47,14 +46,14 @@ class Picture
         return $this->filename;
     }
 
-    public function setFilename(string $filename): self
+    public function setFilename(?string $filename): self
     {
         $this->filename = $filename;
 
         return $this;
     }
 
-    public function getArticle(): File
+    public function getArticle(): ?Article
     {
         return $this->article;
     }

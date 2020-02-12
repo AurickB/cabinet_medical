@@ -1,12 +1,20 @@
 <div>
-    <div class="col-md-12">
-        {% for picture in object.pictures %}
-            <img id="imageEdit"src="{{ vich_uploader_asset(picture, 'imageFile')}}" alt="card-img-top">
-        {% endfor %}
+    {% for picture in object.pictures %}
+        <a href="{{ path('article.show', {slug: object.slug, id: object.id}) }}" class="entry-bg-thumbail" style="background-image: url({{ vich_uploader_asset(picture, 'imageFile')}});"></a>
+    {% endfor %}
+    <div class="entry-meta-info">
+        <i>par {{ object.user.unit }}, le {{ object.FormatedDate }}</i>
     </div>
-    <div>
-        <h3 class=""><a href="#">{{ object.title }}</a></h3>
+    <div class="entry-header">
+        <h3 class=""><a href="{{ path('article.show', {slug: object.slug, id: object.id}) }}" rel="bookmark">{{ object.title }}</a></h3>
+    </div>
+    <div class="entry-content">
         <p class="">{{ object.content|u.truncate(300, '...')}}</p>
+        <div class="entry-more">
+            <a href="{{ path('article.show', {slug: object.slug, id: object.id}) }}">
+                <i class="arrow"></i>
+            </a>
+        </div>
     </div>
 </div>
 

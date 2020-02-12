@@ -3,14 +3,22 @@
 {% block title %}Actualités{% endblock %}
 
 {% block body %}
-    <div class="container mt-4">
+    <div class="container">
         <h1>Actualités</h1>
         <div class="content-wrapper">
-            {% for object in articles %}
-                <div class="">
-                    {% include 'articles/_articles.html.twig' %}
-                </div>
-            {% endfor %}
+            <div class="blog-post">
+                {% if articles is empty%}
+                    <p>Aucun article pour le moment, à venir...</p>
+                {% endif %}
+                {% for object in articles %}
+                    <article id="post-{{ object.id }}" class="entry">
+                        {% include 'articles/_articles.html.twig' %}
+                    </article>
+                {% endfor %}
+            </div>
+        </div>
+        <div class="pagination">
+            {{ knp_pagination_render(articles) }}
         </div>
     </div>
 {% endblock %}

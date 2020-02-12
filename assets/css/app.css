@@ -30,13 +30,15 @@ a{
     color: black;
 }
 
-.btn{
+.bouton{
     width: max-content;
     margin: 1.4rem auto;
+    display: block;
 }
 
-.btn a{
+.bouton a{
     display: inline-block;
+    text-decoration: none;
     color: #233548;
     border: 1px solid #233548;
     border-radius: 5px;
@@ -46,11 +48,15 @@ a{
     font-weight: 700;
 }
 
-.btn a:hover,
-.btn a:focus{
+.bouton a:hover,
+.bouton a:focus{
     background-color: #233548;
     border-color: #233548;
     color: #fff;
+}
+
+.btn{
+    margin: 1.4rem auto;
 }
 
 h1 {
@@ -97,7 +103,7 @@ p{
     height:100%;
     margin:0 auto;
     position:absolute;
-    padding: 8rem 0 0 0;
+    padding: 100px 0 0 0;
 }
 
 
@@ -215,7 +221,6 @@ p{
 #top #menu-toggle button:hover,
 button:focus{
     background-color: transparent;
-    border-color: none;
 }
 
 @media screen and (max-width: 1126px) {
@@ -294,9 +299,9 @@ button:focus{
     opacity:0.9;
 }
 
-/* accordion menu */
+/* <------ accordion menu ------> */
 
-.accordionWrapper{
+.accordion-wrapper{
     display: flex;
     flex-wrap: wrap;
     padding-top:30px;
@@ -305,7 +310,7 @@ button:focus{
     /* box-shadow: 0 1.5em 85px 0 rgba(0, 0, 0, 0.2); */
 }
 
-.accordionItem{
+.accordion-item{
     width:50%;
     box-sizing: border-box;
     font-family:'Open-sans',Arial,sans-serif;
@@ -313,10 +318,10 @@ button:focus{
 
 }
 
-.accordionItemHeading{
+.accordion-item-heading{
     cursor:pointer;
     height: 200px;
-    margin:0px 0px 20px 0px;
+    margin:0 0 20px 0;
     /* padding:10px; */
     /* background:#2980b9; */
     color:black;
@@ -337,7 +342,7 @@ button:focus{
     font-size: 1.1rem;
 }
 
-.accordion-head-content .link{
+.accordion-head-content .lien{
     display: flex;
     padding-top: 80px;
     color: #fff;
@@ -345,21 +350,21 @@ button:focus{
     background-image: linear-gradient(-180deg, rgba(0,0,0, 0) 53%, #000 100%);
     z-index: 1;
     position: relative;
-    top: 15px;
+    top: 5px;
 }
 
-.close .accordionItemContent{
-    height:0px;
+.closed .accordion-item-content{
+    height:0;
     transform: scaleY(0);
     display:block;
 
 }
 
-.open .accordionItemContent{
+.open .accordion-item-content{
     padding: 20px;
     background-color: #fff;
     border: 1px solid #ddd;
-    margin: 0px 0px 10px 0px;
+    margin: 0 0 10px 0;
     display:block;
     /* transform: scaleY(1); */
     transform-origin: top;
@@ -367,7 +372,7 @@ button:focus{
     box-sizing: border-box;
 }
 
-.open .accordionItemHeading {
+.open .accordion-item-heading {
     margin:0px;
     border-top-left-radius: 3px;
     border-top-right-radius: 3px;
@@ -377,19 +382,611 @@ button:focus{
 }
 
 @media screen and (max-width: 576px){
-    .accordionWrapper{
+    .accordion-wrapper{
         flex-direction: column;
     }
 
-    .accordionItem{
+    .accordion-item{
         width: 100%;
         padding: 0;
     }
 }
 
 @media screen and (max-width: 960px) {
-    .accordionItemContent p{
+    .accordion-item-content p{
         text-align: justify;
+    }
+}
+
+/* <------ main deco ------> */
+
+/*main section:nth-child(1),
+main section:nth-child(2),
+main section:nth-child(3),
+main section:nth-child(4),
+main section:nth-child(5){
+    padding-top: 100px;
+}*/
+
+main section:nth-child(2),
+main section:nth-child(4){
+    background-color: #f2f2f2;
+}
+
+.focus{
+    font-weight: 700;
+}
+
+.container{
+    background-color: #f2f2f2;
+    border-radius: 3px;
+    box-shadow: 5px 5px 11px -6px rgba(71, 70, 70, 0.829);
+    padding: 10px;
+}
+
+.bloc-align-center{
+    margin: 0 auto;
+    display: block;
+}
+
+.text-align-center{
+    text-align: center;
+}
+
+.contact-position{
+    padding: 7rem 0 2rem 0;
+}
+
+.presentation{
+    margin: 0 auto;
+    display: block;
+    text-align: center;
+    width: 100%
+}
+
+.logo-email,
+.logo-phone{
+    height: 20px;
+    position: relative;
+    top: 0px;
+    right: 10px;
+}
+
+@media screen and (max-width: 992px){
+    .container{
+        box-shadow: none;
+    }
+}
+/* <------ header deco ------> */
+
+#site-header {
+    background-image: url("../../public/media/public/outside-min.jpg");
+    background-size: cover;
+    background-position: center;
+    /* height: 90vh; */
+    height: 100%;
+    color: #f2f2f2;
+}
+
+#site-header p{
+    margin-top: 0;
+    margin-bottom: 5px;
+    font-size: 1.2rem
+}
+
+#site-header .content-wrapper{
+    height: 600px;
+    position: relative;
+}
+
+#site-header article{
+    padding: 8rem 0 0 0;
+    width: 100%;
+    margin: auto;
+}
+
+#site-header .bouton a{
+    background-color: #233548;
+    color: #fff;
+}
+
+
+@media screen and (min-width: 576px) and (max-width: 1024px){
+    /* #site-header{
+        height: 65vh;
+    } */
+
+    #site-header article{
+        width: 500px;
+        padding: 9rem 0 0 0;
+    }
+
+    #site-header p {
+        margin-bottom: 5px;
+        padding: 5px 0;
+    }
+}
+
+@media screen and (max-width: 576px){
+    #site-header article{
+        width: 300px;
+    }
+
+    #site-header {
+        height: 75vh;
+    }
+
+    #site-header p {
+        margin-bottom: 5px;
+        padding: 0;
+    }
+
+    #site-header .welcome p{
+        display: none
+    }
+}
+
+/* <------ ostéopathe deco ------> */
+
+#osteopathe .content-wrapper{
+    margin: 0 8%;
+}
+
+#osteopathe .container h1{
+    font-size: 2.4rem;
+    text-transform: uppercase;
+}
+
+#osteopathe .certification {
+    text-align: center;
+    position: relative;
+    padding: 40px 0;
+}
+
+#osteopathe .certification:before {
+    content: "";
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: #233548;
+    position: absolute;
+    top: calc(50% - 1px);
+}
+
+#osteopathe .certification p {
+    width: 400px;
+    display: inline-block;
+    padding: 0 40px;
+    background: #f2f2f2;
+    position: relative;
+    z-index: 1;
+}
+
+#osteopathe .presentation-item-content h3{
+    padding: 10px;
+}
+
+#osteopathe .itemHeading{
+    padding-left: 10px;
+}
+
+#osteopathe .nourisson{
+    background-image: url("../../public/media/public/nourisson2.jpg");
+    background-size: cover;
+    background-position: right;
+}
+
+#osteopathe .accordion-wrapper .posologie{
+    background-image: url("../../public/media/public/osteopathie-posologie.jpg");
+    background-size: cover;
+    background-position: center;
+}
+
+#osteopathe .accordion-wrapper .sport{
+    background-image: url("../../public/media/public/osteo-sport.jpg");
+    background-size: cover;
+    background-position: center;
+}
+
+#osteopathe .accordion-wrapper .micronutrition{
+    background-image: url("../../public/media/public/osteopathie-miconutrition.jpg");
+    background-size: cover;
+    background-position: center;
+}
+
+@media screen and (max-width: 992px){
+    #osteopathe .certification p{
+        width: 100%;
+    }
+
+    #osteopathe .content-wrapper{
+        margin: 0 2%;
+    }
+
+    #osteopathe .presentation-item-content p{
+        text-align: justify;
+    }
+}
+
+/* <------ infirmier déco ------> */
+
+#infirmier .content-wrapper{
+    margin: 0 8%;
+}
+
+#infirmier .container{
+    background-color: #ffffff;
+}
+
+#infirmier .container h1{
+    font-size: 2.4rem;
+    text-transform: uppercase;
+}
+
+#infirmier .presentation{
+    display: flex;
+    width: 800px;
+}
+
+#infirmier .presentation div:nth-child(1),
+#infirmier .presentation div:nth-child(3){
+    width: 33.33333333%;
+    border-radius: 6px;
+    padding: 0 10px;
+}
+
+#infirmier .presentation div:nth-child(2){
+    width: 33.33333333%;
+    border-radius: 6px;
+    padding: 0 5px;
+}
+
+#contact-infirmier .presentation div:nth-child(1),
+#contact-infirmier .presentation div:nth-child(3){
+    background-color: #fff;
+    box-shadow: 5px 5px 11px -6px rgba(71, 70, 70, 0.829);
+}
+
+#infirmier .accordion-item-content .presentation{
+    width: inherit;
+}
+
+
+#infirmier .certification {
+    text-align: center;
+    position: relative;
+    padding: 40px 0;
+}
+
+#infirmier .certification:before {
+    content: "";
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: #4F8CB3;
+    position: absolute;
+    top: calc(50% - 1px);
+}
+
+#infirmier .certification p {
+    width: 400px;
+    display: inline-block;
+    padding: 0 40px;
+    background: white;
+    position: relative;
+    z-index: 1;
+}
+
+#infirmier .presentation-item{
+    display: flex;
+}
+
+#infirmier .presentation-item-content{
+    width: 55%;
+    padding-right: 10px;
+}
+
+#infirmier .presentation-item img{
+    width: 45%;
+    height: 100%;
+    margin: auto
+}
+
+#infirmier .soin-courant{
+    background-image: url("../../public/media/public/infirmier-soin-courant2.jpg");
+    background-size: cover;
+    background-position: center;
+}
+
+#infirmier .soin-specifique{
+    background-image: url("../../public/media/public/infirmier-soin-specifique.jpg");
+    background-size: cover;
+    background-position: center;
+}
+
+
+@media screen and (max-width: 992px){
+    #infirmier .presentation{
+        flex-direction: column;
+        width: 100%;
+    }
+    #infirmier .presentation div:nth-child(1),
+    #infirmier .presentation div:nth-child(2),
+    #infirmier .presentation div:nth-child(3){
+        width: 100%;
+        margin: 10px auto;
+    }
+
+    #infirmier .certification p{
+        width: 100%;
+    }
+
+    #infirmier .presentation-item-content {
+        width: 100%
+    }
+
+    #infirmier .presentation-item-content p{
+        text-align: justify;
+    }
+
+    #infirmier .presentation-item img{
+        display: none;
+    }
+
+    #infirmier .content-wrapper{
+        margin: 0 2%;
+    }
+
+}
+
+/* <------ sage-femme déco ------> */
+
+#sage-femme .content-wrapper{
+    margin: 0 8%;
+}
+
+#sage-femme h1 {
+    color: #914a3a;
+}
+
+#sage-femme .bouton a{
+    border-color: #914a3a;
+    color:#914a3a;
+}
+
+#sage-femme .bouton a:hover,
+.bouton a:focus{
+    background-color: #914a3a;
+    border-color: #914a3a;
+}
+
+#sage-femme #contact-sage-femme .bouton a{
+    color: #233548;
+    border-color: #233548;
+}
+
+#sage-femme #contact-sage-femme .bouton a:hover,
+.bouton a:focus{
+    color: #f2f2f2;
+    background-color: #233548;
+    border-color: #233548;
+}
+
+#sage-femme .bouton:hover a,
+.bouton:focus a{
+    color: #f2f2f2;
+}
+
+#sage-femme .container{
+    padding: 0;
+}
+
+#sage-femme .container p{
+    color: #914a3a;
+    position: relative;
+}
+
+#sage-femme  .container h1{
+    font-size: 2.4rem;
+    text-transform: uppercase;
+}
+
+#sage-femme .certification {
+    text-align: center;
+    position: relative;
+    padding: 40px 0;
+}
+
+#sage-femme .presentation .logo{
+    font-family:'Playfair Display', serif;
+    font-size: 2rem;
+    float: initial;
+    padding-left: 0;
+    width: auto;
+    text-align: center;
+}
+
+#sage-femme .certification:before {
+    content: "";
+    left: 10px;
+    right: 72%;
+    height: 2px;
+    background: #914a3a;
+    position: absolute;
+    top: calc(50% - 1px);
+}
+
+#sage-femme .certification::after {
+    content: "";
+    left: 72%;
+    right: 10px;
+    height: 2px;
+    background: #914a3a;
+    position: absolute;
+    top: calc(50% - 1px);
+}
+
+#sage-femme .certification p {
+    width: 400px;
+    display: inline-block;
+    padding: 0 40px;
+    position: relative;
+    z-index: 1;
+}
+
+#sage-femme .presentation-item .presentation-item-content p{
+    text-align: center;
+}
+
+#sage-femme .bgimg-1{
+    background-image: url("../../public/media/public/sage-femme-parallax-img1.jpg");
+    height: 100%;
+}
+
+#sage-femme .bgimg-1 .bouton,
+.bgimg-2 .bouton{
+    position: sticky;
+}
+
+#sage-femme .bgimg-1 h3{
+    text-align: center;
+    padding: 20px;
+    font-size: 1.5rem;
+    color: #26292c;
+}
+
+#sage-femme .bgimg-2{
+    background-image: url("../../public/media/public/sage-femme-parallax-img2.jpg");
+    height: 100%;
+}
+
+#sage-femme .bgimg-2 .contact-position{
+    padding: 4rem 0;
+}
+
+#sage-femme .bgimg-1, .bgimg-2{
+    position: relative;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+/* gérer l'opacité des images en background */
+#sage-femme .bgimg-1::before,
+.bgimg-2::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    background: rgba(255,255,255,0.2);
+}
+
+#sage-femme .soin-item{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+#sage-femme .soin-item .soin-item-content{
+    width: 50%;
+    text-align: initial;
+    padding: 0 10px;
+}
+
+#sage-femme .soin-item .soin-item-content p{
+    margin: auto;
+}
+
+@media screen and (max-width: 992px){
+    #sage-femme .certification p{
+        width: 100%;
+    }
+    #sage-femme .certification:before,
+    .certification::after  {
+        display: none;
+    }
+
+    #sage-femme .content-wrapper{
+        margin: 0 2%;
+    }
+
+    #sage-femme  .presentation-item .presentation-item-content p{
+        text-align: justify;
+    }
+
+    #sage-femme .soin-item .soin-item-content{
+        text-align: justify;
+    }
+}
+
+@media screen and (max-width: 576px){
+    #sage-femme .soin-item{
+        flex-direction: column;
+    }
+
+    #sage-femme .soin-item .soin-item-content{
+        width: 100%;
+    }
+
+    #sage-femme .soin-item .soin-item-content p{
+        width: 100%;
+    }
+}
+
+/* <------ psychologue déco ------> */
+
+#psychologue .content-wrapper{
+    margin: 0 8%;
+}
+
+#psychologue .container{
+    background-color: #ffffff;
+}
+
+#psychologue .container h1:nth-child(3){
+    padding-bottom: 40px;
+}
+
+#psychologue .presentation{
+    margin-bottom: 1.4rem;
+}
+
+#psychologue .patient{
+    width: 300px;
+    color: #f2f2f2;
+    background-color: #26292c;
+    border: thick double white;
+    text-align: center;
+    margin: 30px auto;
+}
+
+#psychologue .presentation-item img{
+    width: 45%;
+    padding: 0 0 0 10px;
+    margin-top: 15px;
+    float: right;
+
+}
+
+@media screen and (max-width: 992px){
+    #psychologue .presentation-item img{
+        display: block;
+        width: 80%;
+        margin: 0 auto;
+        padding: 0;
+        float: none;
+    }
+
+    #psychologue .presentation-item-content p{
+        text-align: justify;
+    }
+}
+
+@media screen and (max-width: 576px){
+    #psychologue .presentation-item .public{
+        width: 100%;
     }
 }
 
@@ -455,6 +1052,68 @@ footer .other-page p,
     }
 }
 
+/* <------ article deco ------> */
+
 #imageEdit{
-    width: inherit;
+    width: 100%;
 }
+
+.entry-bg-thumbail{
+    display: block;
+    height: 365px;
+    margin-bottom: 35px;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.entry-meta-info{
+    color: #999;
+    text-transform: uppercase;
+    font-size: 13px;
+    margin-bottom: 9px;
+}
+
+.entry-header{
+    font-size: 30px;
+    color: #262626;
+    line-height: 1.3;
+}
+
+.entry-header a{
+    text-decoration: none;
+}
+
+.entry-content{
+    font-size: 20px;
+    font-weight: 400;
+}
+
+.entry-content p{
+    padding: 0;
+    text-align: justify;
+}
+
+.entry-more{
+    margin-top: 30px;
+}
+
+.entry-more a{
+    text-decoration: none;
+    font-size: 50px;
+    line-height: 20px;
+    height: 20px;
+    display: inline-block;
+    color: #999;
+}
+
+.entry-more a i:before{
+    font-size: 50px;
+    line-height: 20px;
+}
+
+.arrow:before{
+    content: "\0021FE";
+}
+
+

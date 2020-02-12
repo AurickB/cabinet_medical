@@ -6,6 +6,7 @@ use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Validator\Constraints as Assert;
+use Cocur\Slugify\Slugify;
 
 /**
  * @ORM\Entity(repositoryClass="App\Repository\ArticleRepository")
@@ -22,13 +23,14 @@ class Article
     /**
      * @ORM\Column(type="string", length=255)
      * @Assert\Length(
-     *     min=5,
-     *     max=255)
+     *     min="5",
+     *     max="255"
+     *  )
      */
     private $title;
 
     /**
-     * @ORM\Column(type="string", length=255)
+     * @ORM\Column(type="text")
      */
     private $content;
 
@@ -60,6 +62,11 @@ class Article
      */
     private $pictureFiles;
 
+    /**
+     * @ORM\Column(type="boolean", options={"default": false})
+     */
+    private $isPublished = false;
+
     public function __construct()
     {
         $this->created_at = new \DateTime();
@@ -82,6 +89,11 @@ class Article
         $this->title = $title;
 
         return $this;
+    }
+
+    public function getSlug(): string
+    {
+        return (new Slugify())->slugify($this->title);
     }
 
     public function getContent(): ?string
@@ -108,6 +120,11 @@ class Article
         return $this;
     }
 
+    public function getFormatedDate(): string
+    {
+        return date_format($this->created_at, 'Y-M-d');
+    }
+
     public function getUser()
     {
         return $this->user;
@@ -116,6 +133,19 @@ class Article
     public function setUser(User $user): self
     {
         $this->user = $user;
+
+        return $this;
+    }
+
+
+    public function getIsPublished(): ?bool
+    {
+        return $this->isPublished;
+    }
+
+    public function setIsPublished(bool $isPublished): self
+    {
+        $this->isPublished = $isPublished;
 
         return $this;
     }
@@ -173,6 +203,4 @@ class Article
         $this->pictureFiles = $pictureFiles;
         return $this;
     }
-
-
 }

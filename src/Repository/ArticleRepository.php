@@ -20,15 +20,6 @@ class ArticleRepository extends ServiceEntityRepository
         parent::__construct($registry, Article::class);
     }
 
-    public function findAllVisibleQuery()
-    {
-        return $this->createQueryBuilder('a')
-            ->leftJoin('a.pictures', 'p')
-            ->addSelect('p')
-            ->getQuery()
-            ->getResult();
-            ;
-    }
 
     // /**
     //  * @return Article[] Returns an array of Article objects

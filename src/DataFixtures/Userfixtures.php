@@ -22,12 +22,12 @@ class Userfixtures extends Fixture
 
     public function load(ObjectManager $manager)
     {
-        $user = new User();
+   /*     $user = new User();
         $user->setUsername('admin');
         $user->setPassword($this->encoder->encodePassword($user, 'admin'));
         $user->setRole(0);
         $user->setUnit('administrateur');
         $manager->persist($user);
-        $manager->flush();
+        $manager->flush();*/
     }
 }

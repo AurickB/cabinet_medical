@@ -2,7 +2,7 @@
     <div class="row flex justify-content-start flex-wrap">
         {% for picture in articles.pictures %}
             <div class="col-4">
-                <img id="imageEdit" src="{{ vich_uploader_asset(picture, 'imageFile')}}" alt="card-img-top">
+                <img id="image-edit" src="{{ vich_uploader_asset(picture, 'imageFile')}}" alt="card-img-top">
                 {#
                                     <a href="{{ path('admin.picture.delete', {id: picture.id}) }}" class="btn btn-danger" data-delete data-token="{{ csrf_token('delete' ~ picture.id) }}">Supprimer</a>
                 #}

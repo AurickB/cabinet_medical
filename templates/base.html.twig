@@ -39,7 +39,7 @@
                     <h1>psychologue</h1>
                 </a></li>
             <li class="">
-                <a href="#"><h1>contact</h1></a></li>
+                <a href="{{ path('contact') }}"><h1>contact</h1></a></li>
             {% if app.user %}
                 <li class="">
                     <a class="nav-link"  href="{{ path('admin.article.index') }}"><h1>Gérer les articles</h1></a>
@@ -64,9 +64,9 @@
                     <p>Du lundi au vendredi</p>
                 </div>
                 <div class="other-page">
-                    <a href="#"class="focus"><p>Nous contacter</p></a>
-                    <a href="#" class="focus"><p>Actualités</p></a>
-                    <a href="#" class="focus"><p>Mentions Légales</p></a>
+                    <a href="{{ path('contact') }}"class="focus"><p>Nous contacter</p></a>
+                    <a href="{{ path('article.index') }}" class="focus"><p>Actualités</p></a>
+{#                    <a href="#" class="focus"><p>Mentions Légales</p></a>#}
                 </div>
             </div>
             <div class="text-align-center">Ce site tient compte de la Charte relative à la création de site internet par les infirmiers, des article R.4312-69, R.4312-76 et R.4312-50 du Code de la Santé Publique.</div>

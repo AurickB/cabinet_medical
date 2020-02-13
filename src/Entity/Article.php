@@ -122,7 +122,7 @@ class Article
 
     public function getFormatedDate(): string
     {
-        return date_format($this->created_at, 'Y-M-d');
+        return date_format($this->created_at, 'd-m-Y');
     }
 
     public function getUser()

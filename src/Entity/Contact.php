@@ -7,6 +7,16 @@ use Symfony\Component\Validator\Constraints\NotBlack;
 
 class Contact {
 
+    const MAIL = [
+/*        'Pierre Travostion - Ostéopathe => 'travostinopierre@gmail.com',
+        Bénédicte Jacquin - Infimière Libérale => 'bene.j31@gmail.com',
+        Michel Cambouviles - Infirmier Libéral => 'm_camboulives@orange.fr',
+        Céline Papy - Infirmière Libérale => 'celine-papy@hotmail.fr',
+        Éléonor Helle - Sage-Femme => 'eleonore.helle@hotmail.fr',
+        Marie Scaldaferro - Psychologue => 'm.scafont@yahoo.fr',*/
+        'Aurick Bélénus - Administrateur' => 'aurickbelenus@gmail.com'
+    ];
+
     /**
      * @var string|null
      * @Assert\NotBlank()
@@ -46,7 +56,7 @@ class Contact {
     private $message;
 
     /**
-     * @var User|null
+     * @var int|null
      */
     private $user;
 
@@ -145,20 +155,25 @@ class Contact {
     }
 
     /**
-     * @return User|null
+     * @return mixed
      */
-    public function getUser(): ?User
+    public function getUser()
     {
         return $this->user;
     }
 
     /**
-     * @param User|null $user
+     * @param mixed $user
      * @return Contact
      */
-    public function setUser(?User $user): Contact
+    public function setUser($user)
     {
         $this->user = $user;
         return $this;
+    }
+
+    public function getUserMail(): string
+    {
+        return self::MAIL[$this->user];
     }
 }

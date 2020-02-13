@@ -62,7 +62,7 @@ a{
 h1 {
     font-size: 2.2rem;
     padding: 140px 0 40px 0;
-    font-weight: 300;
+    font-weight: 500;
     color: #233548;
     word-wrap: break-word;
     hyphens: auto;
@@ -136,6 +136,7 @@ p{
 #navbar #content{
     display: flex;
     margin: auto;
+    padding-left: 0px;
     /*padding-right: 2rem;*/
 }
 
@@ -408,6 +409,9 @@ main section:nth-child(5){
     padding-top: 100px;
 }*/
 
+main section{
+    padding-top: 20px;
+}
 main section:nth-child(2),
 main section:nth-child(4){
     background-color: #f2f2f2;
@@ -418,7 +422,7 @@ main section:nth-child(4){
 }
 
 .container{
-    background-color: #f2f2f2;
+    background-color: #fcfcfc;
     border-radius: 3px;
     box-shadow: 5px 5px 11px -6px rgba(71, 70, 70, 0.829);
     padding: 10px;
@@ -557,7 +561,7 @@ main section:nth-child(4){
     width: 400px;
     display: inline-block;
     padding: 0 40px;
-    background: #f2f2f2;
+    background: #fcfcfc;
     position: relative;
     z-index: 1;
 }
@@ -954,7 +958,7 @@ main section:nth-child(4){
 }
 
 #psychologue .patient{
-    width: 300px;
+    max-width: 300px;
     color: #f2f2f2;
     background-color: #26292c;
     border: thick double white;
@@ -988,6 +992,7 @@ main section:nth-child(4){
     #psychologue .presentation-item .public{
         width: 100%;
     }
+
 }
 
 /* <------ footer déco ------> */
@@ -1054,8 +1059,18 @@ footer .other-page p,
 
 /* <------ article deco ------> */
 
-#imageEdit{
+
+#image-edit{
     width: 100%;
+}
+
+#new .content{
+    margin-top: 65px;
+    margin-bottom: 65px;
+}
+
+#new .content-wrapper{
+    max-width: 1000px;
 }
 
 .entry-bg-thumbail{
@@ -1116,4 +1131,93 @@ footer .other-page p,
     content: "\0021FE";
 }
 
+.page-title{
+    padding: 200px 0 10px;
+    position: relative;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
 
+.page-title:before{
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    background: rgba(0,0,0,0.4);
+}
+
+.page-title-content ol {
+    padding-left: 0 !important;
+}
+.page-title-content ol li span{
+    text-transform: uppercase;
+    opacity: 5;
+    color: #233548;
+}
+
+.page-title-content h1{
+    font-size: 60px;
+    letter-spacing: 0;
+    text-transform: none;
+    line-height: 1.2!important;
+    font-family: ultra,sans-serif;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.main-page-title{
+    margin-top: 25px;
+    padding: 0;
+    font-family: ultra, sans-serif;
+}
+
+.main-page-title:before{
+    content: '';
+    position: relative;
+    top: -3px;
+    vertical-align: middle;
+    width: 120px;
+    height: 2px;
+    display: inline-block;
+    background-color: #fff;
+    margin-left: -365px;
+    margin-right: 200px;
+}
+
+.page-title-meta{
+    margin-top: 220px;
+    letter-spacing: 2px;
+    font-size: 12px;
+    text-transform: uppercase;
+    text-align: right;
+    margin-right: 20px;
+}
+
+.page-title-meta>*{
+    opacity: 0.9;
+}
+
+article.post .entry-content p{
+    color: #737373;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 40px;
+}
+
+@media screen and (max-width: 1024px){
+    .main-page-title:before{
+        display: none;
+    }
+
+    #new .content-wrapper{
+        margin: 0 2%;
+    }
+}
+/* <------ contact deco ------> */
+
+#contact .content-wrapper{
+    max-width: 1100px;
+}

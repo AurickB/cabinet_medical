@@ -1,0 +1,32 @@
+<html>
+<body>
+<div>
+    <h1>Demande de contact</h1>
+    <p>Une personne souhaiterais vous contacter</p>
+</div>
+<div>
+    <table>
+        <tr>
+            <td>Prénom : </td>
+            <td>{{ contact.firstname }}</td>
+        </tr>
+        <tr>
+            <td>Nom : </td>
+            <td>{{ contact.lastname }}</td>
+        </tr>
+        <tr>
+            <td>Téléphone : </td>
+            <td>{{ contact.phone }}</td>
+        </tr>
+        <tr>
+            <td>Email : </td>
+            <td>{{ contact.email }}</td>
+        </tr>
+        <tr>
+            <td>Message : </td>
+            <td>{{ contact.message | nl2br}}</td>
+        </tr>
+    </table>
+</div>
+</body>
+</html>

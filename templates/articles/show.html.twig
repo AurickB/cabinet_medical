@@ -3,34 +3,45 @@
 {% block title articles.title %}
 
 {% block body %}
-    <div class="content-wrapper">
+    <div class="">
         {% for picture in articles.pictures %}
             <div class="page-title" style="background-image: url({{ vich_uploader_asset(picture, 'imageFile')}});">
                 <div class="page-content">
-                    <div class="">
-                        <div class="page-title-content">
-                            <ol>{{ articles.user.unit }}</ol>
-                            <h1 class="main-page-title">
-                                <span>{{ articles.title }}</span>
-                            </h1>
+                    <div class="page-header-content">
+                        <div class="text-align-center">
+                            <div class="page-title-content">
+                                <ol>
+                                    <li>
+                                        <span>{{ articles.user.unit }}
+                                        </span>
+                                    </li>
+                                </ol>
+                                <h1 class="main-page-title">
+                                    <span>{{ articles.title }}</span>
+                                </h1>
+                            </div>
                         </div>
                     </div>
                     <div class="page-title-meta">
-                        <span>le {{ articles.FormatedDate }}</span>
+                        <span>{{ articles.FormatedDate }}</span>
                     </div>
                 </div>
             </div>
         {% endfor %}
-        <div class="content">
-            <div class="main-content">
-                <article id="post-{{ articles.id }}" >
-                    <div class="entry-content">
-                        <p>
-                            {{ articles.content }}
-                        </p>
+        <section id="new">
+            <div class="content-wrapper">
+                <div class="content">
+                    <div class="main-content">
+                        <article id="post-{{ articles.id }}" class="post">
+                            <div class="entry-content">
+                                <p>
+                                    {{ articles.content | nl2br}}
+                                </p>
+                            </div>
+                        </article>
                     </div>
-                </article>
+                </div>
             </div>
-        </div>
+        </section>
     </div>
 {% endblock %}

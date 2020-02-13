@@ -19,6 +19,14 @@ class User implements UserInterface, \Serializable
         2 => 'ROLE_AUTOR'
     ];
 
+    const UNIT = [
+        'admin' => 'administrateur',
+        'osteopathe' => 'osteopathe',
+        'infirmier' => 'infirmier',
+        'sage-femme' => 'sage-femme',
+        'psychologue' => 'psychologue',
+    ];
+
     /**
      * @ORM\Id()
      * @ORM\GeneratedValue()
@@ -115,6 +123,11 @@ class User implements UserInterface, \Serializable
         return $this;
     }
 
+    public function getUnitType(): string
+    {
+        return self::UNIT[$this->unit];
+    }
+
     /**
      * String representation of object
      * @link https://php.net/manual/en/serializable.serialize.php
@@ -168,7 +181,8 @@ class User implements UserInterface, \Serializable
      */
     public function getRoles()
     {
-        return ['ROLE_SUPER_ADMIN', 'ROLE_ADMIN', 'ROLE_AUTOR'];
+        $roles =$this->getRoleType();
+        return array($roles);
     }
 
     /**

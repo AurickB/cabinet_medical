@@ -39,7 +39,6 @@ class ContactType extends AbstractType
         ]);
     }
 
-
     private function getChoices()
     {
         $choices = Contact::MAIL;

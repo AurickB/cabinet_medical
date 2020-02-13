@@ -15,6 +15,8 @@
             <thead>
             <tr>
                 <th>Titre</th>
+                <th>Par</th>
+                <th>Date</th>
                 <th>Action</th>
             </tr>
             </thead>
@@ -22,6 +24,8 @@
             {% for article in articles %}
                 <tr>
                     <td>{{ article.title }}</td>
+                    <td>{{ article.user.username }}</td>
+                    <td>{{ article.FormatedDate }}</td>
                     <td>
                         <a href="{{ path('admin.article.edit', {id: article.id}) }}" class="btn btn-secondary">Editer</a>
                         <form method="post" action="{{ path('admin.article.delete', {id: article.id}) }}" style="display: inline-block" onsubmit="return confirm('Ëtes vous sûr ?')">

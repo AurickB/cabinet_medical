@@ -1,0 +1,3 @@
+#!/bin/sh
+
+rsync -av ./ cabinetmtm@ssh.cluster026.hosting.ovh.net:~/cabinetmedical --include=public/build --include=public/.htaccess --include=vendor --include=.env --exclude-from=.gitignore --exclude=".*"

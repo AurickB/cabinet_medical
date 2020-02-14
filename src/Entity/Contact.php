@@ -8,12 +8,12 @@ use Symfony\Component\Validator\Constraints\NotBlack;
 class Contact {
 
     const MAIL = [
-/*        'Pierre Travostion - Ostéopathe => 'travostinopierre@gmail.com',
-        Bénédicte Jacquin - Infimière Libérale => 'bene.j31@gmail.com',
-        Michel Cambouviles - Infirmier Libéral => 'm_camboulives@orange.fr',
-        Céline Papy - Infirmière Libérale => 'celine-papy@hotmail.fr',
-        Éléonor Helle - Sage-Femme => 'eleonore.helle@hotmail.fr',
-        Marie Scaldaferro - Psychologue => 'm.scafont@yahoo.fr',*/
+        'Pierre Travostion - Ostéopathe' => 'travostinopierre@gmail.com',
+        'Bénédicte Jacquin - Infimière Libérale' => 'bene.j31@gmail.com',
+        'Michel Cambouviles - Infirmier Libéral' => 'm_camboulives@orange.fr',
+        'Céline Papy - Infirmière Libérale' => 'celine-papy@hotmail.fr',
+        'Éléonor Helle - Sage-Femme' => 'eleonore.helle@hotmail.fr',
+        'Marie Scaldaferro - Psychologue' => 'm.scafont@yahoo.fr',
         'Aurick Bélénus - Administrateur' => 'aurickbelenus@gmail.com'
     ];
 

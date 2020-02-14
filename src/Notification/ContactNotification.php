@@ -5,7 +5,6 @@ namespace App\Notification;
 use App\Entity\Contact;
 use Swift_Mailer;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
-use Symfony\Component\Mime\Email;
 use Twig\Environment;
 
 class ContactNotification extends AbstractController {
@@ -30,7 +29,7 @@ class ContactNotification extends AbstractController {
 
         $message = (new \Swift_Message('Prise de contact - Cabinet médical : '))
             ->setfrom($contact->getEmail())
-            ->setto($contact->getUserMail())
+            ->setto($contact->getUser())
             ->setreplyTo($contact->getEmail())
             ->setBody($this->renderer->render('email/contact.html.twig', [
                 'contact' => $contact
